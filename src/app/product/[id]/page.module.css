@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .imgcontainer{
+    margin-top: 50px;
+    position: relative;
+    width:  60%;
+    height: 500px;
+    border: 2px solid hotpink;
+  }
+
+ 
+
+  .img{
+    object-fit: cover;
+  }
+
+  .details{
+    margin-top: 50px;
+    position: relative;
+    width:  60%;
+    min-height: 500px;
+    border: 2px solid hotpink;
+  }

@@ -1,0 +1,46 @@
+.card{
+    width: 230px;
+    height: 300px;
+    box-shadow: 0px 0px 4px #888888;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .imgcontainer{
+    width: 100%;
+    height: 70%;
+  
+  }
+
+  .title{
+    width: 100%;
+    height: 10%;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+   
+  }
+
+  .price{
+    width: 100%;
+    height: 10%;
+    padding-left: 5px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+  }
+  .cate{
+    width: 100%;
+    height: 10%;
+    padding-left: 5px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+  }
