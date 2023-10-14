@@ -6,19 +6,26 @@ import Carousel from '@/component/carousel/carousel';
 import { useRouter } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import Card from '@/component/card/card';
-
+import useSWR, { mutate } from 'swr'
 
 export default function Home() {
       const router = useRouter()
       const searchParams = useSearchParams()
       const search = searchParams.get('cate')
+      const fetcher = (...args) => fetch(...args).then(res => (res.json()))
+      const { data, error, isLoading, mutate } = useSWR(`/api/post`, fetcher)
       if (!search) {
-            router.replace('?cate=Action')
+            router.replace('/?cate=Action')
       }
 
       function selectcate(event){
-            router.replace(`?cate=${event}`,{ scroll: false })
+            router.replace(`/?cate=${event}`,{ scroll: false })
       }
+     const currentdata = data?.movie.filter((e)=>{
+      return e.cate === search
+     })
+     console.log(currentdata)
+     console.log(data)
       return (
             <>
                   <div className={styles.container}>
@@ -34,13 +41,9 @@ export default function Home() {
                                     <div onClick={() => { selectcate("Romatic") }} className={styles.type+ " " + styles[search === "Romatic" ? "tabactive" : "" ]}>Romatic</div>
                               </div>
                               <div className={styles.listitems}>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
-                                   <Card data={"eiei"}/>
+                                   {currentdata?.map((e,index)=>{
+                                    return <Card key={index} id={e.id} title={e.title} price={e.price} cate={e.cate} img={e.img}/>
+                                   })}
                               </div>
                         </section>
                   </div>

@@ -1,0 +1,35 @@
+.container{
+    padding-top: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 40, 40, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.body{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    background-color: rgb(180, 180, 180);
+}
+.btndel{
+    width: 60px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: ease-in-out 0.1s;
+    font-weight: bold;
+    background-color: #e94b4b;
+    color: rgb(255, 254, 254);
+}

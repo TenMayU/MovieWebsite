@@ -10,19 +10,21 @@
     position: relative;
     width:  60%;
     height: 500px;
-    border: 2px solid hotpink;
+
   }
 
  
 
   .img{
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .details{
     margin-top: 50px;
     position: relative;
     width:  60%;
-    min-height: 500px;
-    border: 2px solid hotpink;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }

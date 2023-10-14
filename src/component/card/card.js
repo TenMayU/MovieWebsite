@@ -1,22 +1,23 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
-export default function Card({data}) {
+import Image from 'next/image'
+export default function Card({id,title,price,cate,img}) {
     const router = useRouter()
     return (
         <>
-            <div onClick={()=>{router.push(`/product/01`)}} className={styles.card}>
+            <div onClick={()=>{router.push(`/product/${id}`)}} className={styles.card}>
                 <div className={styles.imgcontainer}>
-
+                <Image className={styles.img} src={img} fill/> 
                 </div>
                 <div className={styles.title}>              
-                    name          
+                    {title}         
                 </div>
                 <div className={styles.price}>              
-                    price          
+                    {price }         
                 </div>
                 <div className={styles.cate}>              
-                    #tpye       
+                    #{cate}      
                 </div>
             </div>
         </>
